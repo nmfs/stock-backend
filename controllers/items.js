@@ -51,6 +51,7 @@ itemsRouter.put('/:id', (request, response, next) => {
     name: body.name,
     stock: body.stock,
     rate: body.rate,
+    date: new Date(),
   }
 
   Item.findByIdAndUpdate(request.params.id, item, { new: true })
